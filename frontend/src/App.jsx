@@ -101,12 +101,12 @@ const ProjectTrackingSystem = () => {
     }
   ];
 
-  const integrations = [
-    { name: 'Kobo Toolbox', status: 'Connected', lastSync: '2024-06-19 10:30' },
-    { name: 'AIN Platform', status: 'Connected', lastSync: '2024-06-19 09:15' },
-    { name: 'Power BI', status: 'Connected', lastSync: '2024-06-19 11:00' },
-    { name: 'D365', status: 'Pending', lastSync: 'Never' }
-  ];
+  // const integrations = [
+  //   { name: 'Kobo Toolbox', status: 'Connected', lastSync: '2024-06-19 10:30' },
+  //   { name: 'AIN Platform', status: 'Connected', lastSync: '2024-06-19 09:15' },
+  //   { name: 'Power BI', status: 'Connected', lastSync: '2024-06-19 11:00' },
+  //   { name: 'D365', status: 'Pending', lastSync: 'Never' }
+  // ];
 
   const getProgressColor = (progress) => {
     if (progress >= 80) return 'green';
@@ -191,18 +191,18 @@ const ProjectTrackingSystem = () => {
           </div>
         );
 
-      case 'integrations':
-        return (
-          <div className="cards-list">
-            {integrations.map((i, idx) => (
-              <div key={idx} className="card">
-                <h3>{i.name}</h3>
-                <p>Last Sync: {i.lastSync}</p>
-                <p>Status: {i.status}</p>
-              </div>
-            ))}
-          </div>
-        );
+      // case 'integrations':
+      //   return (
+      //     <div className="cards-list">
+      //       {integrations.map((i, idx) => (
+      //         <div key={idx} className="card">
+      //           <h3>{i.name}</h3>
+      //           <p>Last Sync: {i.lastSync}</p>
+      //           <p>Status: {i.status}</p>
+      //         </div>
+      //       ))}
+      //     </div>
+      //   );
 
       default:
         return null;
@@ -214,7 +214,7 @@ const ProjectTrackingSystem = () => {
       <header className="header">
         <div>
           <h1>Project Tracking System</h1>
-          <p>Manage activities, milestones, baselines, assessments & integrations</p>
+          <p>Manage activities, milestones, baselines, & assessments</p>
         </div>
         <div className="header-actions">
           <button><Download /> Export</button>
@@ -228,7 +228,7 @@ const ProjectTrackingSystem = () => {
           { id: 'milestones', label: 'Milestones', icon: Target },
           { id: 'baselines', label: 'Baselines', icon: BarChart3 },
           { id: 'assessments', label: 'Assessments', icon: FileText },
-          { id: 'integrations', label: 'Integrations', icon: Database }
+          // { id: 'integrations', label: 'Integrations', icon: Database }
         ].map(tab => {
           const Icon = tab.icon;
           return (
